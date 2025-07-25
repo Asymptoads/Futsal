@@ -46,7 +46,7 @@ export default passport.use(new GoogleStrategy(
                 });
                 const newSavedUser = await newUser.save();
                 return done(null, newSavedUser);
-            }
+            };
             return done(null, findUser);
         } catch (err) {
             console.log(err);
