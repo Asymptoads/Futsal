@@ -39,13 +39,13 @@ export default passport.use(new GoogleStrategy(
 
         try {
             if (!findUser) {
-                const newUser = new GoogleUser({
-                    username: profile.username,
-                    email: profile.email,
+                const newUser = await GoogleUser.create({
+                    username: profile.displayName,
+                    email: profile.emails[0].value,
                     googleId: profile.id,
                 });
-                const newSavedUser = await newUser.save();
-                return done(null, newSavedUser);
+                // const newSavedUser = await newUser.save();
+                return done(null, newUser);
             };
             return done(null, findUser);
         } catch (err) {
