@@ -10,6 +10,7 @@ import authRoutes from "./routes/auth.mjs";
 dotenv.config();
 
 const MONGO_URI = process.env.MONGO_URI;
+const PORT = process.env.PORT || 3000;
 
 mongoose.connect(MONGO_URI)
     .then(() => {
@@ -31,14 +32,12 @@ passport.deserializeUser((obj, done) => done(null, obj));
 
 app.use(authRoutes);
 
-const PORT = process.env.PORT || 3000;
-
 
 app.get("/", (req, res) => {
     res.send("Home Page");
 });
 
 app.get("/profile", (req, res) => {
-    res.send(req.user ? `Hello ${req.user}!` : "Not Logged in!");
+    res.send(req.user ? `Hello "${req.user.username}" having email as "${req.user.email}".` : "Not Logged in!");
 });
 
