@@ -57,8 +57,9 @@ const SideBar = ({ isSidebarOpen, setIsSidebarOpen }: SidebarTypes) => {
                 top={'10px'}
                 right={'10px'}
                 onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                cursor={'pointer'}
             >
-                <IconX />
+                <IconX size={'28px'} />
             </Box>
             <VStack
                 className='links-container'

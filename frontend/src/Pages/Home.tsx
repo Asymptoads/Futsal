@@ -7,7 +7,7 @@ import Footer from '../components/Footer/Footer';
 const Home = () => {
     return (
         <PageContainer>
-            <VStack paddingY={'40px'} width={'100%'}>
+            <VStack paddingTop={'40px'} width={'100%'}>
                 <Heading
                     fontWeight={'extrabold'}
                     fontSize={'42px'}

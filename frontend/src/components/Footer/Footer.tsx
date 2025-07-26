@@ -38,17 +38,21 @@ const Footer = () => {
         },
     ];
     return (
-        <VStack className='footer' width={'100%'}>
+        <VStack className='footer' width={'100%'} marginTop={'80px'}>
             <Box
+                className='divider-line'
                 width={'100%'}
                 height={'1px'}
-                boxShadow={'0px 45px 50px 0px rgba(0, 0, 0, 1'}
+                boxShadow={'0px 5px 12px 0px rgba(0, 0, 0, 1)'}
+                // border={'2px solid black'}
+                bgColor={'black'}
             ></Box>
             <HStack
                 className='social-icons-container'
                 width={'100%'}
                 justifyContent={'center'}
                 gap={'20px'}
+                marginTop={'20px'}
             >
                 {socialMediaList.map((media, index) => {
                     return (
@@ -67,6 +71,41 @@ const Footer = () => {
                     );
                 })}
             </HStack>
+            <Heading fontSize={'38px'} marginTop={'20px'}>
+                Futmaidan
+            </Heading>
+            <Text fontSize={'18px'} letterSpacing={'2px'} marginTop={'10px'}>
+                Managed by Asymptoads
+            </Text>
+            <Text fontSize={'14px'} letterSpacing={'1px'} lineHeight={'10px'}>
+                Bhaktapur, Nepal
+            </Text>
+            <HStack>
+                <Text
+                    fontSize={'14px'}
+                    letterSpacing={'1px'}
+                    // lineHeight={'2px'}
+                >
+                    T: +977 9843999851
+                </Text>
+                <Text
+                    fontSize={'14px'}
+                    letterSpacing={'1px'}
+                    lineHeight={'2px'}
+                >
+                    E: info@asymptoads.com
+                </Text>
+            </HStack>
+            <Box
+                className='copyright-container'
+                borderTop={'1px solid black'}
+                width={'100%'}
+                textAlign={'center'}
+                marginTop={'20px'}
+                paddingTop={'10px'}
+            >
+                <Text>&copy; 2025 Asymptoads Nepal</Text>
+            </Box>
         </VStack>
     );
 };
