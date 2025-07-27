@@ -6,10 +6,10 @@ import RegisterPage from "./pages/RegisterPage";
 const App = () => {
   return (
     <Router>
-      <nav>
+      {/* <nav>
         <Link to="/login">Login</Link> |{" "}
         <Link to="/register">Register</Link>
-      </nav>
+      </nav> */}
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
