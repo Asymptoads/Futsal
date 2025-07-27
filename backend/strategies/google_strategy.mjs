@@ -1,6 +1,7 @@
 import passport from "passport";
 import {Strategy as GoogleStrategy}  from "passport-google-oauth20";
 import { GoogleUser } from "../models/google_user.mjs";
+import { FacebookUser } from "../models/facebook_user.mjs";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -15,8 +16,11 @@ passport.deserializeUser(async (id, done) => {
     console.log("Inside Deserialize");
     console.log(`Deserializing ID: ${id}`);
     try {
-        const findUser = await GoogleUser.findById(id);
-        if (!findUser) throw new Error("User not found");
+        let findUser = await GoogleUser.findById(id);
+        if (!findUser){
+            findUser = await FacebookUser.findById(id);
+            if (!findUser) throw new Error("User not found");
+        }
         done(null, findUser);
     } catch (err) {
         done(err, null);
@@ -30,6 +34,7 @@ export default passport.use(new GoogleStrategy(
         callbackURL: "http://localhost:3000/auth/google/callback"
     },
     async(accessToken, refreshToken, profile, done) => {
+        console.log("Inside Google Strategy", profile.id);
         let findUser;
         try {
             findUser = await GoogleUser.findOne({ googleId: profile.id});
