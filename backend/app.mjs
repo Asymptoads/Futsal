@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import passport from "passport";
 
 import "./strategies/google_strategy.mjs";
+import "./strategies/facebook_strategy.mjs";
 import authRoutes from "./routes/auth.mjs";
 
 dotenv.config();
@@ -41,3 +42,11 @@ app.get("/profile", (req, res) => {
     res.send(req.user ? `Hello "${req.user.username}" having email as "${req.user.email}".` : "Not Logged in!");
 });
 
+app.get("/logout", (req, res) => {
+    req.logout((err) => {
+        if (err) {
+            return res.status(500).send("Logout failed");
+        }
+        res.redirect("/");
+    });
+});
