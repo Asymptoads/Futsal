@@ -39,6 +39,9 @@ const SysAdminPageContainer = ({ children }: SysAdminPageContainerTypes) => {
                 </Heading>
             </Box>
             <SysAdminSidebar {...{ isSidebarOpen, setIsSidebarOpen }} />
+            {isSidebarOpen && (
+            <Box className='overlay'  width={'100%'} height={'100%'} backgroundColor={'#0e0e0ec8'} backdropBlur={'20px'} position={'absolute'} top={0} left={0} zIndex={5} onClick={() => setIsSidebarOpen(!isSidebarOpen)}></Box>
+            )}
             <VStack flex={1} width={'100%'} minW={'320px'} minH={'320px'} padding={'20px'} overflow={'auto'}>
                 {children}
             </VStack>
