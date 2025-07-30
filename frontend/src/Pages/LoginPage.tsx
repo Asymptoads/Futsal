@@ -8,7 +8,8 @@ import {
   Link,
 } from "@chakra-ui/react";
 
-import { FcGoogle } from "react-icons/fc";
+// import { FcGoogle } from "react-icons/fc";
+import { IconBrandGoogle } from '@tabler/icons-react';
 
 const LoginPage: React.FC = () => {
   return (
@@ -35,8 +36,9 @@ const LoginPage: React.FC = () => {
             colorScheme="teal"
             w="100%"
             mb={6}
-            leftIcon={<FcGoogle size={20} />}
+            // leftIcon={<FcGoogle size={20} />}
           >
+            <IconBrandGoogle size={20} style={{ marginRight: 8 }} />
             Continue with Google
           </Button>
           <Text textAlign="center" color="gray.600" mt={4}>
