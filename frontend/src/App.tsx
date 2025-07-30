@@ -6,14 +6,22 @@ import Home from './Pages/Home';
 import Login from './Pages/SysAdmin/Login';
 import SysAdminHome from './Pages/SysAdmin/SysAdminHome';
 
+//SysAdmin Panesls
+import SysAdminFutsalRequest from './Pages/SysAdmin/FutsalRequest';
+import Orders from './Pages/SysAdmin/Orders';
+import Refunds from './Pages/SysAdmin/Refund'; // Assuming Refunds is similar to Orders
+
 const App = () => {
     return (
         <Routes>
             <Route path='/' element={<Home />} />
 
             {/* System Admin Routes */}
-            <Route path='/sysadmin/' element={<SysAdminHome />} />
             <Route path='/sysadmin/login' element={<Login />} />
+            <Route path='/sysadmin/' element={<SysAdminHome />} />
+            <Route path='/sysadmin/futsal-requests' element={<SysAdminFutsalRequest />} />
+            <Route path='/sysadmin/orders' element={<Orders />} />
+            <Route path='/sysadmin/refunds' element={<Refunds />} /> {/* Assuming Refunds is similar to Orders */}
         </Routes>
     );
 };
