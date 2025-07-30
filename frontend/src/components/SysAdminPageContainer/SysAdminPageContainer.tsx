@@ -39,7 +39,7 @@ const SysAdminPageContainer = ({ children }: SysAdminPageContainerTypes) => {
                 </Heading>
             </Box>
             <SysAdminSidebar {...{ isSidebarOpen, setIsSidebarOpen }} />
-            <VStack flex={1} width={'100%'} minW={'320px'} minH={'320px'}>
+            <VStack flex={1} width={'100%'} minW={'320px'} minH={'320px'} padding={'20px'} overflow={'auto'}>
                 {children}
             </VStack>
         </VStack>
