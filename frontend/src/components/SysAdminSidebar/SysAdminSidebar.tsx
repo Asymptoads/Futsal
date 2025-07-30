@@ -19,11 +19,11 @@ const SysAdminSidebar = ({
         },
         {
             name: 'active orders',
-            link: '/sysadmin/active-orders',
+            link: '/sysadmin/orders',
         },
         {
             name: 'active refunds',
-            link: '/sysadmin/active-refunds',
+            link: '/sysadmin/refunds',
         },
         {
             name: 'futsals',
