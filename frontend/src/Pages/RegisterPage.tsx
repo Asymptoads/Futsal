@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Box,
   Flex,
   Heading,
   Text,
@@ -8,10 +7,11 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { IconBrandGoogle } from '@tabler/icons-react';
+import PageContainer from '../components/PageContainer/PageContainer';
 
 const LoginPage: React.FC = () => {
   return (
-    <Box minH="100vh" bg="gray.50">
+    <PageContainer>
       <Flex justify="center" align="center" minH="100vh">
         <Flex
           boxShadow="xl"
@@ -46,7 +46,7 @@ const LoginPage: React.FC = () => {
           </Text>
         </Flex>
       </Flex>
-    </Box>
+    </PageContainer>
   );
 };
 
