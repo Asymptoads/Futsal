@@ -4,9 +4,11 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import passport from "passport";
 
-import "./strategies/google_strategy.mjs";
-import "./strategies/facebook_strategy.mjs";
+// import "./strategies/google_strategy.mjs";
+// import "./strategies/facebook_strategy.mjs";
 import authRoutes from "./routes/auth.mjs";
+
+import courtRoutes from "./routes/courtRoutes.mjs";
 
 dotenv.config();
 
@@ -33,6 +35,8 @@ passport.deserializeUser((obj, done) => done(null, obj));
 
 app.use(authRoutes);
 
+app.use(express.json());
+app.use(courtRoutes);
 
 app.get("/", (req, res) => {
     res.send("Home Page");
