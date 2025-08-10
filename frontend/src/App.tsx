@@ -7,9 +7,12 @@ import { Route, Routes } from 'react-router-dom';
 
 import Home from './Pages/Home';
 
-// Sys adming pages
+// Sys admin pages
 import Login from './Pages/SysAdmin/Login';
 import SysAdminHome from './Pages/SysAdmin/SysAdminHome';
+
+//Futsal Admin
+import CreateFutsal from './Pages/FutAdmin/CreateFutsal';
 
 //SysAdmin Panesls
 import SysAdminFutsalRequest from './Pages/SysAdmin/FutsalRequest';
@@ -25,6 +28,8 @@ const App = () => {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/" element={<div>Welcome to the Landing Page!</div>} />
+            {/* Futsal Admin Routes */}
+            <Route path="/futadmin/create-futsals" element={<CreateFutsal />} />
             {/* System Admin Routes */}
             <Route path='/sysadmin/login' element={<Login />} />
             <Route path='/sysadmin/' element={<SysAdminHome />} />

@@ -8,7 +8,7 @@ import passport from "passport";
 // import "./strategies/facebook_strategy.mjs";
 import authRoutes from "./routes/auth.mjs";
 
-import courtRoutes from "./routes/courtRoutes.mjs";
+import FutsalRoutes from "./routes/futsalRoutes.mjs";
 
 dotenv.config();
 
@@ -36,7 +36,7 @@ passport.deserializeUser((obj, done) => done(null, obj));
 app.use(authRoutes);
 
 app.use(express.json());
-app.use(courtRoutes);
+app.use(FutsalRoutes);
 
 app.get("/", (req, res) => {
     res.send("Home Page");
